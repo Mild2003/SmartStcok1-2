@@ -3,7 +3,7 @@ import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
 export default function ButtonHome({ label, value, onChange, options }) {
   return (
-    <FormControl sx={{ minWidth: 200 }}>
+    <FormControl sx={{ minWidth: 1000 }}>
       <InputLabel>{label}</InputLabel>
       <Select value={value} onChange={onChange} label={label}>
         {options.map((opt) => (
