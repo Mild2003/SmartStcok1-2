@@ -76,13 +76,14 @@ function Header() {
   };
 
   return (
-    <Box sx={{ display: "flex", height: "100vh" }}>
+    <Box sx={{ display: "flex",width:"100%", height: "100vh",background :"#2d2d2d"}}>
       <Sidebar active={active} setActive={setActive} />
       <Box component="main" sx={{ flexGrow: 1, p: 3, position: "relative" }}>
         <Topbar active={active} />
         <Toolbar />
 
         <div className="menu-container">
+          <div className="expiry-row">
           {/* วันที่รับ */}
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
@@ -91,6 +92,7 @@ function Header() {
               onChange={(newValue) => setReceiveDate(newValue)}
             />
           </LocalizationProvider>
+          </div>
 
           {/* คลัง */}
           <TextField select label="คลัง" value={menu1} onChange={(e) => setMenu1(e.target.value)}>
@@ -154,18 +156,29 @@ function Header() {
           <TextField label="Barcode สินค้า" value={barcode} onChange={(e) => setBarcode(e.target.value)} />
           <TextField label="Comment *" value={comment} onChange={(e) => setComment(e.target.value)} />
 
-          {/* ปุ่ม Save / Clear */}
-          <div className="button-container">
-            <Button className="save-button" startIcon={<SaveIcon />} onClick={handleSave} variant="contained">
-              Save
-            </Button>
-            <Button className="clear-button" startIcon={<ClearIcon />} onClick={handleClear} variant="contained">
-              Clear
-            </Button>
-          </div>
+{/* ปุ่ม Save / Clear */}
+<div className="button-fixed">
+  <Button
+    className="save-button"
+    startIcon={<SaveIcon />}
+    onClick={handleSave}
+    variant="contained"
+  >
+    Save
+  </Button>
+  <Button
+    className="clear-button"
+    startIcon={<ClearIcon />}
+    onClick={handleClear}
+    variant="contained"
+  >
+    Clear
+  </Button>
+</div>
+
         </div>
       </Box>
-    </Box>
+    // </Box>
   );
 }
 
