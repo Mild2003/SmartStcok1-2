@@ -1,13 +1,278 @@
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 16px;
-  max-width: 400px;
-  width: 100%;
+/* =========================
+   Grid layout หลัก - ฟอร์มแนวตั้ง
+========================= */
+.form-grid {
+  display: flex !important;
+  flex-direction: column !important; /* จัดเป็นแนวตั้ง */
+  gap: 8px !important;
+  flex: 1 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
 }
 
-.menu-row{
-    width: 100%;
-    max-width: 100px;
+/* DatePicker styling */
+.date-picker-field {
+  width: 100% !important;
 }
+.expiry-date-field {
+  flex: 1;
+  width: 100% !important;
+}
+
+/* Expiry Row - แถวเดียว */
+.expiry-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+/* =========================
+   Dark Theme Base
+========================= */
+html, body, #root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #2d2d2d !important;
+  color: white;
+}
+
+/* =========================
+   Container ของฟอร์ม
+========================= */
+.menu-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; /* กึ่งกลางแนวนอน */
+  justify-content: flex-start;
+  height: calc(100vh - 64px);
+  padding: 12px;
+  box-sizing: border-box;
+  gap: 16px;
+  overflow: hidden;
+  background-color: #2d2d2d;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Input Fields - Dark Theme
+========================= */
+.MuiTextField-root {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.MuiTextField-root .MuiInputBase-root {
+  background-color: #3a3a3a !important;
+  color: white !important;
+  height: 35px !important;
+  width: 100% !important;
+  transition: all 0.3s ease !important;
+}
+
+.MuiTextField-root .MuiInputBase-root:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  background-color: #3a3a3a !important;
+}
+.MuiTextField-root .MuiOutlinedInput-root fieldset {
+  border-color: #555 !important;
+}
+.MuiTextField-root .MuiOutlinedInput-root:hover fieldset {
+  border-color: #e1e1e1 !important;
+}
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #f0f0f0 !important;
+}
+
+.MuiTextField-root .MuiInputBase-input {
+  color: white !important;
+  font-size: 12px;
+  padding: 5px 12px !important;
+}
+
+.MuiTextField-root .MuiInputBase-input::placeholder {
+  color: #888 !important;
+  opacity: 1;
+}
+
+.MuiTextField-root .MuiInputLabel-root {
+  color: #888 !important;
+  font-size: 11px;
+}
+.MuiTextField-root .MuiInputLabel-root.Mui-focused {
+  color: #b7b7b7 !important;
+}
+.MuiTextField-root .MuiInputLabel-shrink {
+  color: #888 !important;
+  padding: 0 4px;
+}
+
+/* =========================
+   Select Dropdown
+========================= */
+.MuiSelect-select {
+  background-color: #3a3a3a !important;
+  color: white !important;
+}
+
+.MuiMenuItem-root {
+  background-color: #3a3a3a !important;
+  color: white !important;
+}
+.MuiMenuItem-root:hover {
+  background-color: #4a4a4a !important;
+}
+.MuiMenuItem-root.Mui-selected {
+  background-color: #202022 !important;
+  color: white !important;
+}
+.MuiPaper-root.MuiMenu-paper {
+  background-color: #3a3a3a !important;
+}
+
+/* =========================
+   Grid fields
+========================= */
+.quantity-group {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.pricing-group {
+  display: grid !important;
+  grid-template-columns: 2fr 2fr 2fr 2fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+/* =========================
+   Checkbox styling
+========================= */
+.MuiFormControlLabel-root {
+  margin: 0;
+  color: white !important;
+  flex-shrink: 0;
+}
+.MuiFormControlLabel-label {
+  color: white !important;
+  font-size: 14px;
+}
+.MuiCheckbox-root {
+  color: #ecf0ec !important;
+  padding: 4px !important;
+}
+.MuiCheckbox-root.Mui-checked {
+  color: #bec5be !important;
+}
+
+/* =========================
+   Buttons Save/Clear
+========================= */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  padding: 8px 0;
+  border-top: 1px solid #444;
+  flex-shrink: 0;
+  background-color: #2d2d2d;
+}
+
+.button-container {
+  background-color: #4caf50 !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  transition: all 0.2s ease-in-out;
+}
+.save-button:hover {
+  background-color: #43a047 !important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.clear-button {
+  background-color: #f44336 !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  transition: all 0.2s ease-in-out;
+}
+.clear-button:hover {
+  background-color: #d32f2f !important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   DatePicker Dark Theme
+========================= */
+.MuiDatePicker-root .MuiInputBase-root {
+  background-color: #4a4a4a !important;
+  color: white !important;
+}
+.MuiPickersPopper-root .MuiPaper-root {
+  background-color: #d21515 !important;
+  color: white !important;
+  border: 1px solid #666;
+}
+.MuiPickersCalendarHeader-root {
+  color: #4a90e2 !important;
+}
+.MuiPickersDay-root {
+  color: rgb(0, 0, 0) !important;
+}
+.MuiPickersDay-root:hover {
+  background-color: #4a91e28e !important;
+}
+.MuiPickersDay-root.Mui-selected {
+  background-color: #4a90e2 !important;
+  color: white !important;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 1200px) {
+  .main-content-container { grid-template-columns: 1fr; gap: 15px; }
+  .info-panel { flex-direction: row; flex-wrap: wrap; }
+  .info-card { flex: 1; min-width: 200px; }
+}
+
+@media (max-width: 768px) {
+  .main-content-container { padding: 8px; }
+  .form-section { padding: 15px; }
+  /* Stack pricing and quantity fields on mobile */
+  div[style*="grid-template-columns: 1fr 1fr 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  .action-buttons { flex-direction: column; align-items: center; gap: 10px; }
+  .info-panel { flex-direction: column; }
+}
+
+/* =========================
+   Scrollbar styling
+========================= */
+.form-section::-webkit-scrollbar, .info-panel::-webkit-scrollbar { width: 6px; }
+.form-section::-webkit-scrollbar-track, .info-panel::-webkit-scrollbar-track { background: #2a2a2a; }
+.form-section::-webkit-scrollbar-thumb, .info-panel::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+.form-section::-webkit-scrollbar-thumb:hover, .info-panel::-webkit-scrollbar-thumb:hover { background: #777; }
+
+/* =========================
+   Card hover effects
+========================= */
+.info-card { transition: all 0.3s ease !important; }
+.info-card:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 16px rgba(0,0,0,0.4) !important; }

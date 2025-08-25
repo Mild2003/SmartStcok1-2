@@ -7,12 +7,13 @@
 .custom-sidebar .MuiDrawer-paper{
     background-color: #2c2c2c;
     color: rgb(255, 255, 255);
-    height: calc(100vh - 64px);       /* ใช้ calc เพื่อให้Sidebar ไม่ทับ AppBar 64px = ความสูง AppBar ปกติ */
+    height: calc(100vh - 9px);       /* ใช้ calc เพื่อให้Sidebar ไม่ทับ AppBar 64px = ความสูง AppBar ปกติ */
      top: 64px;               /* เว้นพื้นที่ด้านบน */
     bottom: auto;         /* ป้องกันขยายจากล่าง */
     display: flex;
     flex-direction: column; /* เรียง menu จากบนลงล่าง */
     padding: 5px 6px;
+    margin-top: -55px;
     
 }
 

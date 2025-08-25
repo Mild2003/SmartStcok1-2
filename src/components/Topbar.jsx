@@ -8,23 +8,27 @@ import "./Topbar.css";
 
 export default function Topbar({ active }) {
   return (
-    <AppBar className="topbar-appbar"
+     <AppBar
+      className="topbar-appbar"
       position="fixed"
-      color="transparent" // ป้องกัน MUI override สี
-      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}  // อยู่เหนือ Drawer
+      color="transparent"
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
     >
-      <Toolbar className="topbar-toolbar">
+      <Toolbar className="topbar-toolbar" sx={{ display: "flex", justifyContent: "space-between" }}>
+        {/* ซ้าย: ชื่อระบบ */}
         <Typography variant="h6" className="topbar-left-title">
           Smart Stock
         </Typography>
-        <Typography variant="h6" className="topbar-center-title">
+
+        {/* กลาง: active */}
+        <Typography variant="h6" className="topbar-center-title" sx={{ textAlign: "center", flex: 1 }}>
           {active}
         </Typography>
+
+        {/* ขวา: Admin */}
         <Box className="topbar-admin-container" display="flex" alignItems="center">
           <AccountCircleIcon sx={{ mr: 1 }} />
-          <Typography color="inherit">
-            Admin
-          </Typography>
+          <Typography color="inherit">Admin</Typography>
         </Box>
       </Toolbar>
     </AppBar>
